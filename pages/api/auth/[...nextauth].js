@@ -16,23 +16,32 @@ export default NextAuth({
       name: 'Credentials',
       async authorize(credentials, req) {
         connectMongo().catch((error) => {
-          error: 'Connection Failed...!' + error;
+          error: 'Connection Failed...!';
         });
+
         // check user existance
         const result = await Users.findOne({ email: credentials.email });
+
         if (!result) {
-          throw new Error('No user found please dignup');
+          throw new Error('No user Found with Email Please Sign Up...!');
         }
-        // compare the pass
+        // compare()
         const checkPassword = await compare(
           credentials.password,
           result.password
         );
-        if (checkPassword || result.email == credentials.email) {
-          throw new Error('Username or Password doesnt match');
+
+        // incorrect password
+        if (!checkPassword || result.email !== credentials.email) {
+          throw new Error("Username or Password doesn't match");
         }
+
         return result;
       },
     }),
   ],
+  secret: 'XH6bp/TkLvnUkQiPDEZNyHc0CV+VV5RL/n+HdVHoHN0=',
+  session: {
+    strategy: 'jwt',
+  },
 });

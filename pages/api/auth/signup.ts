@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import connectMongo from '../../../database/config';
-import Users, { IUser } from '../../../model/Schema';
+import Users from '../../../model/Schema';
 import { hash } from 'bcryptjs';
 
 export default async function handler(
@@ -12,18 +12,21 @@ export default async function handler(
   );
 
   if (req.method == 'POST') {
-    if (!req.body) return res.status(404).json({ error: ' no data' });
+    if (!req.body)
+      return res.status(404).json({ error: true, message: ' no data' });
     const { username, email, password } = req.body;
 
     const checkExisting = await Users.findOne({ email });
     if (checkExisting)
-      return res.status(422).json({ message: 'User already exist' });
+      return res
+        .status(422)
+        .json({ error: true, message: 'User already exist' });
 
     Users.create(
       { username, email, password: await hash(password, 12) },
-      function (err: any, data: IUser) {
+      function (err: any, data: any) {
         if (err) return res.status(404).json({ err });
-        res.status(201).json({ status: true, user: data });
+        res.status(201).json({ status: true, error: false, user: data });
       }
     );
   } else {
