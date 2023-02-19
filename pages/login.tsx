@@ -104,7 +104,7 @@ export default function Login() {
               className={styles.button_custom}
               onClick={() => handleGoogleLogin()}
             >
-              Sign In with Google{' '}
+              Sign In with Google
               <Image
                 src={'/assets/google.svg'}
                 alt='google'
@@ -118,7 +118,7 @@ export default function Login() {
               type='button'
               className={styles.button_custom}
             >
-              Sign In with Github{' '}
+              Sign In with Github
               <Image
                 alt='github'
                 src={'/assets/github.svg'}
@@ -131,7 +131,7 @@ export default function Login() {
 
         {/* button */}
         <p className='text-center text-gray-400'>
-          don't have an account yet?{' '}
+          {`don't have an account yet?`}
           <Link
             className='text-blue-700'
             href={'/register'}
