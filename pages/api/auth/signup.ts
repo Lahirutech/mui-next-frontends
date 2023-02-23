@@ -8,7 +8,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   connectMongo().catch((error) =>
-    res.json({ error: `Connection Failed...!${error}` })
+    res.json({ error: `Connection Failed..!${error}` })
   );
 
   if (req.method == 'POST') {
