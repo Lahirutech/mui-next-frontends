@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import Layout from '../layout/layout';
-import styles from '../styles/Form.module.css';
+import Layout from '../../layout/layout';
+import styles from '../../styles/Form.module.css';
 import { HiAtSymbol, HiFingerPrint, HiOutlineUser } from 'react-icons/hi';
 import { useState } from 'react';
 import { useFormik } from 'formik';
-import { registerValidate } from '../lib/validate';
+import { registerValidate } from '../../lib/validate';
 import { useRouter } from 'next/router';
 import { json } from 'stream/consumers';
 

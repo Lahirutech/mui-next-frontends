@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import styles from '../styles/Home.module.css';
+import styles from '../../styles/Home.module.css';
 import { getSession, signOut, useSession } from 'next-auth/react';
 import { GetServerSideProps } from 'next';
 

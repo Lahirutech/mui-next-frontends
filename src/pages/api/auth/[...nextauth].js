@@ -1,8 +1,8 @@
 import { compare } from 'bcryptjs';
 import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
-import connectMongo from '../../../database/config';
-import Users from '../../../model/Schema';
+import connectMongo from '../../../../database/config';
+import Users from '../../../../model/Schema';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 export default NextAuth({

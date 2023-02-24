@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import connectMongo from '../../../database/config';
-import Users from '../../../model/Schema';
+import connectMongo from '../../../../database/config';
+import Users from '../../../../model/Schema';
 import { hash } from 'bcryptjs';
 
 export default async function handler(

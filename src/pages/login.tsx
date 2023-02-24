@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import Layout from '../layout/layout';
-import styles from '../styles/Form.module.css';
+import Layout from '../../layout/layout';
+import styles from '../../styles/Form.module.css';
 import { HiAtSymbol, HiFingerPrint } from 'react-icons/hi';
 import { signIn, signOut } from 'next-auth/react';
 import { useFormik } from 'formik';
-import login_validation from '../lib/validate';
+import login_validation from '../../lib/validate';
 import { useRouter } from 'next/router';
 
 export default function Login() {
