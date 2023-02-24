@@ -32,12 +32,12 @@ export default function Login() {
       body: JSON.stringify(values),
     };
 
-    await fetch('http://localhost:3000/api/auth/signup', options)
+    await fetch('api/auth/signup', options)
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        if (!data.error) router.push('http://localhost:3000');
+        if (!data.error) router.push('/');
         console.log('error message', data.message);
       })
       .catch((err) => {
