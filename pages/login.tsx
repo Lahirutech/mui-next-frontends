@@ -14,7 +14,7 @@ export default function Login() {
 
   // google handler
   const handleGoogleLogin = async () => {
-    signIn('google', { callbackUrl: 'http://localhost:3000' });
+    signIn('google', { callbackUrl: '/' });
   };
 
   // Pass the useFormik() hook initial form values and a submit function that will
