@@ -32,7 +32,7 @@ export default function Login() {
       body: JSON.stringify(values),
     };
 
-    await fetch('https://youtube.com/api/auth/signup', options)
+    await fetch('api/auth/signup', options)
       .then((res) => {
         return res.json();
       })
