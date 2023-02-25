@@ -8,8 +8,10 @@ import { signIn, signOut } from 'next-auth/react';
 import { useFormik } from 'formik';
 import login_validation from '../../lib/validate';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 export default function Login() {
+  const [error, setError] = useState('');
   const router = useRouter();
 
   // google handler
@@ -36,7 +38,12 @@ export default function Login() {
       callbackUrl: '/',
     });
 
-    if (status.ok) router.push(status.url);
+    if (status.ok) {
+      setError('');
+      router.push(status.url);
+    } else {
+      setError(status.error);
+    }
   }
 
   return (
@@ -128,7 +135,7 @@ export default function Login() {
             </button>
           </div>
         </form>
-
+        {error ? error : null}
         {/* button */}
         <p className='text-center text-gray-400'>
           dont have an account yet?
