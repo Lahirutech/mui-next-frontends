@@ -1,3 +1,4 @@
+import { AppBar, Button } from '@mui/material';
 import {
   Footer,
   Blog,
@@ -6,6 +7,17 @@ import {
   Possibility,
   WhatGPT3,
 } from '../containers/index';
+import theme from '../theme';
 export default function home() {
-  return <div>home</div>;
+  return (
+    <div>
+      <AppBar position='static'></AppBar>
+      <Button
+        variant='contained'
+        color='neutral'
+      >
+        Button
+      </Button>{' '}
+    </div>
+  );
 }
