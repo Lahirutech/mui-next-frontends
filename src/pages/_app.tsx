@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 import { SessionProvider } from 'next-auth/react';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import createEmotionCache from './createEmotionCache';
-import { ThemeProvider } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import Head from 'next/head';
 import theme from '../theme';
 
@@ -28,6 +28,7 @@ function MyApp({
           />
         </Head>
         <ThemeProvider theme={theme}>
+          <CssBaseline />
           <Component {...pageProps} />
         </ThemeProvider>
       </SessionProvider>
