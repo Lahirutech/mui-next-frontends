@@ -1,4 +1,5 @@
-import { AppBar, Button } from '@mui/material';
+import { Box, Container } from '@mui/system';
+import { Navbar } from '../components';
 import {
   Footer,
   Blog,
@@ -9,15 +10,5 @@ import {
 } from '../containers/index';
 import theme from '../theme';
 export default function home() {
-  return (
-    <div>
-      <AppBar position='static'></AppBar>
-      <Button
-        variant='contained'
-        color='neutral'
-      >
-        Button
-      </Button>{' '}
-    </div>
-  );
+  return <Navbar />;
 }
