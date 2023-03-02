@@ -1,4 +1,3 @@
-import '../../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { SessionProvider } from 'next-auth/react';
 import { CacheProvider, EmotionCache } from '@emotion/react';
@@ -6,7 +5,7 @@ import createEmotionCache from './createEmotionCache';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import Head from 'next/head';
 import theme from '../theme';
-
+import '../../styles/globals.css';
 const clientSideEmotionCache = createEmotionCache();
 
 interface MyAppProps extends AppProps {

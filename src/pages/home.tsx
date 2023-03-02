@@ -8,7 +8,12 @@ import {
   Possibility,
   WhatGPT3,
 } from '../containers/index';
-import theme from '../theme';
+import styles from '../../styles/home.module.css';
 export default function home() {
-  return <Navbar />;
+  return (
+    <Box className={styles['gradient__bg']}>
+      <Navbar />
+      <Header />
+    </Box>
+  );
 }

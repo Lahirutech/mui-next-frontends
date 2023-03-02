@@ -12,7 +12,10 @@ export const roboto = Roboto({
 const theme = createTheme({
   palette: palette,
   typography: {
-    fontFamily: roboto.style.fontFamily,
+    allVariants: {
+      color: 'white',
+      fontFamily: roboto.style.fontFamily,
+    },
   },
 });
 
