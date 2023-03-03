@@ -32,16 +32,38 @@ export default function Header() {
           alteration boisterous the attachment. Party we years to order allow
           asked of.
         </Typography>
-        <Stack direction='row'>
+        <Stack
+          direction='row'
+          width={'100%'}
+          margin='2rem 0 1rem'
+        >
           <TextField
-            sx={{ width: '456', height: '73', backgroundColor: '052D56' }}
-            placeholder='Your Email'
-          />{' '}
-          <Button>Get Started</Button>
-        </Stack>
+            fullWidth={true}
+            sx={{
+              width: '456',
+              height: '73',
+              backgroundColor: 'orange',
+              input: {
+                '&::placeholder': {
+                  color: 'white',
+                },
+                color: 'white',
+              },
 
+              flex: 2,
+              '& .MuiOutlinedInput-root.Mui-focused': {
+                '& > fieldset': {
+                  border: 'none',
+                },
+              },
+            }}
+            placeholder='Your Email'
+          />
+          <Button className={`${styles.get_started_button}`}>
+            Get Started
+          </Button>
+        </Stack>
         <Stack direction='row'>
-          {' '}
           <Image
             src=''
             alt='/assets/people.png'
