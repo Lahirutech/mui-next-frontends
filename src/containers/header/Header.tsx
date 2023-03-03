@@ -42,12 +42,13 @@ export default function Header() {
             sx={{
               width: '456',
               height: '73',
-              backgroundColor: 'orange',
+
               input: {
                 '&::placeholder': {
                   color: 'white',
                 },
                 color: 'white',
+                backgroundColor: 'black',
               },
 
               flex: 2,
@@ -63,10 +64,15 @@ export default function Header() {
             Get Started
           </Button>
         </Stack>
-        <Stack direction='row'>
+        <Stack
+          direction='row'
+          alignItems='center'
+          // alignContent='center'
+          spacing={1}
+        >
           <Image
-            src=''
-            alt='/assets/people.png'
+            src='/assets/people.png'
+            alt=''
             width='181'
             height='38'
           ></Image>

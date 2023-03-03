@@ -1,5 +1,5 @@
 import { Box, Container } from '@mui/system';
-import { Navbar } from '../components';
+import { Brand, Navbar } from '../components';
 import {
   Footer,
   Blog,
@@ -14,6 +14,7 @@ export default function home() {
     <Box className={styles['gradient__bg']}>
       <Navbar />
       <Header />
+      <Brand />
     </Box>
   );
 }
