@@ -15,6 +15,7 @@ export default function home() {
       <Navbar />
       <Header />
       <Brand />
+      <WhatGPT3 />
     </Box>
   );
 }

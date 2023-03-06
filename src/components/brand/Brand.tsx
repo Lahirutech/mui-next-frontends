@@ -7,14 +7,16 @@ export default function Brand() {
       display={'flex'}
       alignItems='center'
       justifyContent='space-between'
-      padding=' 4rem 6rem'
+      padding='4rem 6rem'
       flexWrap={'wrap'}
     >
       <Grid
         container
         spacing={2}
+        direction='row'
+        alignItems='center'
+        justifyContent='center'
       >
-        {' '}
         <Grid
           item
           xs={12 / 3}
@@ -25,7 +27,7 @@ export default function Brand() {
             src='/assets/google.png'
             width='72'
             height='25'
-          ></Image>{' '}
+          ></Image>
         </Grid>
         <Grid
           item
@@ -37,7 +39,7 @@ export default function Brand() {
             src='/assets/slack.png'
             width='72'
             height='25'
-          ></Image>{' '}
+          ></Image>
         </Grid>
         <Grid
           item
@@ -49,7 +51,7 @@ export default function Brand() {
             src='/assets/atlassian.png'
             width='72'
             height='25'
-          ></Image>{' '}
+          ></Image>
         </Grid>
         <Grid
           item
