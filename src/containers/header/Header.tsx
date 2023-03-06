@@ -18,11 +18,11 @@ export default function Header() {
         flexDirection='column'
         alignItems='flex-start'
         justifyContent='center'
-        mr={'5rem'}
+        mr={{ sx: '0rem', md: '5rem' }}
       >
         <Typography
-          variant='h1'
           className={Hstyles.gradient__text}
+          sx={{ typography: { sm: 'h2', xs: 'h3', md: 'h1' } }}
         >
           Let’s Build Something amazing with GPT-3 OpenAI
         </Typography>
@@ -81,12 +81,18 @@ export default function Header() {
           </Typography>
         </Stack>
       </Box>
-      <Image
-        alt=''
-        src='/assets/ai.png'
-        width='667'
-        height='701'
-      ></Image>
+      <Box
+        width={'701'}
+        height={'667'}
+      >
+        <Image
+          alt=''
+          src='/assets/ai.png'
+          width='667'
+          height='701'
+          layout='responsive'
+        ></Image>
+      </Box>
     </Box>
   );
 }

@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import Image from 'next/image';
 
 export default function Brand() {
@@ -10,37 +10,72 @@ export default function Brand() {
       padding=' 4rem 6rem'
       flexWrap={'wrap'}
     >
-      {' '}
-      <Image
-        alt=''
-        src='/assets/google.png'
-        width='72'
-        height='25'
-      ></Image>{' '}
-      <Image
-        alt=''
-        src='/assets/slack.png'
-        width='72'
-        height='25'
-      ></Image>{' '}
-      <Image
-        alt=''
-        src='/assets/atlassian.png'
-        width='72'
-        height='25'
-      ></Image>{' '}
-      <Image
-        alt=''
-        src='/assets/dropbox.png'
-        width='72'
-        height='25'
-      ></Image>
-      <Image
-        alt=''
-        src='/assets/shopify.png'
-        width='72'
-        height='25'
-      ></Image>
+      <Grid
+        container
+        spacing={2}
+      >
+        {' '}
+        <Grid
+          item
+          xs={12 / 3}
+          sm={12 / 5}
+        >
+          <Image
+            alt=''
+            src='/assets/google.png'
+            width='72'
+            height='25'
+          ></Image>{' '}
+        </Grid>
+        <Grid
+          item
+          xs={12 / 3}
+          sm={12 / 5}
+        >
+          <Image
+            alt=''
+            src='/assets/slack.png'
+            width='72'
+            height='25'
+          ></Image>{' '}
+        </Grid>
+        <Grid
+          item
+          xs={12 / 3}
+          sm={12 / 5}
+        >
+          <Image
+            alt=''
+            src='/assets/atlassian.png'
+            width='72'
+            height='25'
+          ></Image>{' '}
+        </Grid>
+        <Grid
+          item
+          xs={12 / 3}
+          sm={12 / 5}
+        >
+          <Image
+            alt=''
+            src='/assets/dropbox.png'
+            width='72'
+            height='25'
+          ></Image>
+        </Grid>
+        <Grid
+          item
+          xs={12 / 3}
+          sm={12 / 5}
+        >
+          <Image
+            alt=''
+            src='/assets/shopify.png'
+            width='72'
+            height='25'
+          ></Image>
+        </Grid>
+      </Grid>
     </Box>
   );
 }
