@@ -13,6 +13,7 @@ export default function Feature({
       display='flex'
       width='100%'
       margin={{ md: '1rem', sm: '1rem 0' }}
+      flexDirection='column'
     >
       <Box
         flex={1}

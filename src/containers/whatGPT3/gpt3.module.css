@@ -46,10 +46,20 @@
 .gpt3__whatgpt3_feature {
   display: flex;
   margin: 0;
-  max-width: 700px;
 }
 
-@media screen and (max-width: 650px) {
+.gpt3__whatgpt3_container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+@media screen and (max-width: 900px) {
+  .gpt3__whatgpt3_container {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 630px) {
   /* Customizing feature component as per needs */
   .gpt3__whatgpt3_feature .gpt3__features-container__feature {
     flex-direction: column;
@@ -63,5 +73,8 @@
   .gpt3__whatgpt3-heading h1 {
     font-size: 28px;
     line-height: 40px;
+  }
+  .gpt3__whatgpt3_container {
+    flex-wrap: wrap;
   }
 }
