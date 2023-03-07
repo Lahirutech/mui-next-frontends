@@ -13,7 +13,7 @@ export default function Feature({
       display='flex'
       width='100%'
       margin={{ md: '1rem', sm: '1rem 0' }}
-      flexDirection='column'
+      flexDirection='row'
     >
       <Box
         flex={1}
@@ -30,7 +30,7 @@ export default function Feature({
               'linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%)',
           }}
         />
-        <h1>{title}</h1>
+        <h3>{title}</h3>
       </Box>
       <Box
         display='flex'

@@ -16,6 +16,7 @@ export default function home() {
       <Header />
       <Brand />
       <WhatGPT3 />
+      <Features />
     </Box>
   );
 }
