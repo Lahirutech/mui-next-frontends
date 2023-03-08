@@ -1,5 +1,5 @@
 import { Box, Container } from '@mui/system';
-import { Brand, Navbar } from '../components';
+import { Brand, Navbar, CTA } from '../components';
 import {
   Footer,
   Blog,
@@ -17,6 +17,9 @@ export default function home() {
       <Brand />
       <WhatGPT3 />
       <Features />
+      <Possibility />
+      {/* <CTA />
+      <Blog /> */}
     </Box>
   );
 }
