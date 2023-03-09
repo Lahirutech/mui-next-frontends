@@ -18,8 +18,8 @@ export default function home() {
       <WhatGPT3 />
       <Features />
       <Possibility />
-      {/* <CTA />
-      <Blog /> */}
+      <CTA />
+      {/* <Blog /> */}
     </Box>
   );
 }
