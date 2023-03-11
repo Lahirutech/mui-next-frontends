@@ -19,7 +19,7 @@ export default function home() {
       <Features />
       <Possibility />
       <CTA />
-      {/* <Blog /> */}
+      <Blog />
     </Box>
   );
 }
