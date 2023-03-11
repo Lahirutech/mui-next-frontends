@@ -20,6 +20,7 @@ export default function home() {
       <Possibility />
       <CTA />
       <Blog />
+      <Footer />
     </Box>
   );
 }
