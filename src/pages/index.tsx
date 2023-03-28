@@ -49,6 +49,7 @@ export default function index() {
               display='flex'
               flexDirection='column'
               alignItems='center'
+              className='navlink'
             >
               <li
                 style={{
@@ -62,7 +63,7 @@ export default function index() {
               </li>
               <Box
                 mt={-1}
-                className={`${styles.line}`}
+                className={`${styles.line} `}
               ></Box>
             </Box>
           ))}
@@ -74,6 +75,14 @@ export default function index() {
           alt='logo'
           className='cart-icon'
         />
+      </Box>
+
+      {/* Nav End */}
+
+      <Box className={styles.text_box}>
+        <p>I'M</p>
+        <h1>MAYARA</h1>
+        <h3>BUILD BEAUTIFUL WEBSITES</h3>
       </Box>
     </Box>
   );

@@ -1,10 +1,33 @@
 .line {
-  width: 20px;
+  width: 0px;
   height: 2px;
   background-color: white;
-  transition: width 1s;
+  transition: width 0.1s;
 }
 
-.line:hover {
-  width: 10px;
+.navlink:hover .line {
+  width: 40px;
+}
+
+.navlink:hover {
+  color: red;
+}
+
+.text_box {
+  color: #fff;
+  position: absolute;
+  bottom: 8%;
+}
+.text_box p {
+  font-size: 50px;
+  font-weight: 600;
+}
+.text_box h1 {
+  font-size: 190px;
+  line-height: 160px;
+  margin-left: -10px;
+}
+.text_box h3 {
+  font-size: 40px;
+  font-weight: 500;
 }
