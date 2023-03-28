@@ -2,7 +2,8 @@ import { Box, padding } from '@mui/system';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-
+import styles from '../../styles/home.module.css';
+const navItems = ['About', 'Contact', 'Portfolio'];
 export default function index() {
   return (
     <Box
@@ -24,8 +25,10 @@ export default function index() {
         display={'flex'}
         width='100%'
         alignItems={'center'}
+        justifyContent='space-between'
         flexWrap='wrap'
         padding='5px 0px'
+        flexDirection='row'
       >
         <Image
           src='/assets/images/logo.png'
@@ -34,32 +37,36 @@ export default function index() {
           alt='logo'
           className='logo'
         />
-        <ul style={{ flex: 1, textAlign: 'right', paddingRight: '30px' }}>
-          <li
-            style={{
-              display: 'inline-block',
-              listStyle: 'none',
-              margin: '10px 30px',
-            }}
-          >
-            <Link href={''}>About</Link>
-          </li>
-          <li
-            style={{
-              display: 'inline-block',
-              listStyle: 'none',
-              margin: '10px 30px',
-            }}
-          >
-            <Link href={''}>About</Link>
-          </li>
-          {/* <li>
-            <Link href={''}>Contact</Link>
-          </li>
-          <li>
-            <Link href={''}>Portfolio</Link>
-          </li> */}
-        </ul>
+        <Box
+          display='flex'
+          flexDirection='row'
+          justifyContent={'right'}
+          flex={1}
+        >
+          {navItems.map((item, idx) => (
+            <Box
+              key={idx}
+              display='flex'
+              flexDirection='column'
+              alignItems='center'
+            >
+              <li
+                style={{
+                  display: 'inline-block',
+                  listStyle: 'none',
+                  margin: '10px 30px',
+                  color: 'white',
+                }}
+              >
+                {item}
+              </li>
+              <Box
+                mt={-1}
+                className={`${styles.line}`}
+              ></Box>
+            </Box>
+          ))}
+        </Box>
         <Image
           width={30}
           height={15}

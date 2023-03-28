@@ -6,3 +6,19 @@
 * {
   box-sizing: content-box;
 }
+
+.underline ::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  transition: width 0.3s;
+}
+
+.underline :hover::after {
+  width: 50%;
+}
