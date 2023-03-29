@@ -5,6 +5,7 @@
 
 * {
   box-sizing: content-box;
+  font-family: 'poppins', sans-serif;
 }
 
 .underline ::after {

@@ -1,8 +1,12 @@
+import { Button, Stack } from '@mui/material';
 import { Box, padding } from '@mui/system';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import styles from '../../styles/home.module.css';
+import ArrowRightAltSharpIcon from '@mui/icons-material/ArrowRightAltSharp';
+import { FaInstagramSquare, FaFacebook, FaTwitterSquare } from 'react-icons/fa';
+
 const navItems = ['About', 'Contact', 'Portfolio'];
 export default function index() {
   return (
@@ -83,6 +87,49 @@ export default function index() {
         <p>I'M</p>
         <h1>MAYARA</h1>
         <h3>BUILD BEAUTIFUL WEBSITES</h3>
+        <Box
+          display='flex'
+          flexDirection='row'
+          alignItems='center'
+          mt='30px'
+          flexWrap='wrap'
+        >
+          <Button
+            variant='outlined'
+            sx={{ color: 'white', borderColor: 'white' }}
+          >
+            Explore My Portfolio
+          </Button>
+          <Button
+            variant='outlined'
+            endIcon={<ArrowRightAltSharpIcon />}
+            sx={{ color: 'white', borderColor: 'white', ml: '5px' }}
+          >
+            Connect With Me
+          </Button>
+          <span className={styles.myself}>
+            You can explore more about My Portfolio and
+            <br /> Personal Life Experience Here
+          </span>
+        </Box>
+      </Box>
+
+      <Box
+        position='absolute'
+        right='5%'
+        bottom='8%'
+      >
+        <Stack spacing={'7px'}>
+          <Link href=''>
+            <FaInstagramSquare size={30} />
+          </Link>
+          <Link href=''>
+            <FaFacebook size={30} />
+          </Link>
+          <Link href=''>
+            <FaTwitterSquare size={30} />
+          </Link>
+        </Stack>
       </Box>
     </Box>
   );
