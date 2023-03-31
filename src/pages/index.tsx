@@ -1,11 +1,11 @@
-import { Button, Chip } from '@mui/material';
+import { Button, Chip, Typography } from '@mui/material';
 import React from 'react';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
 
 export default function index() {
   return (
     <div>
-      Lanka
+      <Typography>My name</Typography>
       <Button variant='light'>Light button</Button>
       <Button variant='contained'>Original </Button>
       <Chip
