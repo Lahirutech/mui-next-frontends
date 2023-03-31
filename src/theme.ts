@@ -8,22 +8,49 @@ export const roboto = Roboto({
   display: 'swap',
   fallback: ['Helvetica', 'Arial', 'sans-serif'],
 });
+declare module '@mui/material/Button' {
+  interface ButtonPropsVariantOverrides {
+    light: true;
+  }
+}
+declare module '@mui/material/Chip' {
+  interface ChipPropsVariantOverrides {
+    mychip: true;
+  }
+}
 
 // Create a theme instance.
 const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#556cd6',
+  components: {
+    MuiButton: {
+      variants: [
+        {
+          props: { variant: 'light' },
+          style: {
+            border: '2px solid white',
+            background: 'green',
+            fontFamily: 'cursive',
+            color: 'white',
+            '&:hover': { backgroundColor: 'green' },
+          },
+        },
+      ],
+      defaultProps: {
+        disableRipple: true,
+        disableFocusRipple: true,
+        disableElevation: true,
+      },
     },
-    secondary: {
-      main: '#19857b',
+    MuiChip: {
+      variants: [
+        {
+          props: { variant: 'mychip' },
+          style: {
+            background: 'rgb(31 157 102 / 93%)',
+          },
+        },
+      ],
     },
-    error: {
-      main: red.A400,
-    },
-  },
-  typography: {
-    fontFamily: roboto.style.fontFamily,
   },
 });
 
