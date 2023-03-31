@@ -74,7 +74,7 @@ export default function index() {
         </Box>
         <Image
           width={30}
-          height={15}
+          height={25}
           src='/assets/images/cart.png'
           alt='logo'
           className='cart-icon'

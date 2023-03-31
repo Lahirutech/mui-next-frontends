@@ -1,25 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 * {
   box-sizing: content-box;
   font-family: 'poppins', sans-serif;
-}
-
-.underline ::after {
-  content: '';
-  width: 0;
-  height: 3px;
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fff;
-  transition: width 0.3s;
-}
-
-.underline :hover::after {
-  width: 50%;
+  padding: 0;
+  margin: 0;
 }

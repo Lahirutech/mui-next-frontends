@@ -32,6 +32,8 @@
   -webkit-background-clip: text;
   background-position: 0 0;
   animation: back 20s linear infinite;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 @keyframes back {
   100% {
