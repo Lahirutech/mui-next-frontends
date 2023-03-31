@@ -98,7 +98,7 @@ export default function index() {
             variant='outlined'
             sx={{ color: 'white', borderColor: 'white' }}
           >
-            Explore My Portfolio
+            Explore My Portfolio.
           </Button>
           <Button
             variant='outlined'
