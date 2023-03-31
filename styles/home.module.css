@@ -35,16 +35,35 @@
   margin-top: 0px;
   margin-bottom: 0px;
 }
+.text_box h3 {
+  font-size: 40px;
+  font-weight: 5 00;
+}
 @keyframes back {
   100% {
     background-position: 2000px 0;
   }
 }
-.text_box h3 {
-  font-size: 40px;
-  font-weight: 5 00;
-}
 
 .myself {
   margin-left: 20px;
+}
+
+@media only screen and (max-width: 872px) {
+  .text_box p {
+    font-size: 50px;
+    font-weight: 600;
+  }
+  .text_box h1 {
+    font-size: 80px;
+    line-height: 104px;
+  }
+  .text_box h3 {
+    font-size: 37px;
+  }
+
+  .myself {
+    margin-left: 0;
+    margin-top: 7px;
+  }
 }
