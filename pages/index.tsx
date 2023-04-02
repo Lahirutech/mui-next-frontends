@@ -5,28 +5,26 @@ import Box from '@mui/material/Box';
 import Link from '../src/Link';
 import ProTip from '../src/ProTip';
 import Copyright from '../src/Copyright';
+import { Stack } from '@mui/material';
+import { LeftBar } from '../src/components/LeftBar';
+import Content from '../src/components/Content';
+import RightBar from '../src/components/RightBar';
+import Navbar from '../src/components/Navbar';
 
 export default function Home() {
   return (
-    <Container maxWidth="lg">
-      <Box
-        sx={{
-          my: 4,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
+    <Box>
+      <Navbar />
+      <Stack
+        direction='row'
+        spacing={2}
+        alignItems={'center'}
+        justifyContent={'space-between'}
       >
-        <Typography variant="h4" component="h1" gutterBottom>
-          Material UI - Next.js example in TypeScript
-        </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
-        <ProTip />
-        <Copyright />
-      </Box>
-    </Container>
+        <LeftBar />
+        <Content />
+        <RightBar />
+      </Stack>
+    </Box>
   );
 }
