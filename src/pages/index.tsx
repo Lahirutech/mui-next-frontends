@@ -23,7 +23,6 @@ function Guest() {
 }
 
 function User({ session, handleSignOut }: any) {
-  console.log('session', session);
   return (
     <main className='container mx-auto text-center py-20'>
       <h3 className='text-4xl font-bold text-col'> User Home page</h3>

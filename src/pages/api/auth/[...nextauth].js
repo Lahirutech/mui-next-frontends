@@ -4,6 +4,7 @@ import GoogleProvider from 'next-auth/providers/google';
 import connectMongo from '../../../../database/config';
 import Users from '../../../../model/Schema';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import jwt from 'jsonwebtoken';
 
 export default NextAuth({
   providers: [
@@ -12,6 +13,7 @@ export default NextAuth({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
     }),
+
     CredentialsProvider({
       name: 'Credentials',
       async authorize(credentials, req) {
@@ -43,5 +45,23 @@ export default NextAuth({
   secret: 'XH6bp/TkLvnUkQiPDEZNyHc0CV+VV5RL/n+HdVHoHN0=',
   session: {
     strategy: 'jwt',
+  },
+  jwt: {},
+
+  callbacks: {
+    async signIn({ user, account, email, credentials }) {
+      return true;
+    },
+    async redirect({ url, baseUrl }) {
+      return baseUrl;
+    },
+    async session({ session, user, token }) {
+      // call the database here and get the user roles
+
+      return session;
+    },
+    async jwt({ token, user, account, profile, isNewUser }) {
+      return token;
+    },
   },
 });
