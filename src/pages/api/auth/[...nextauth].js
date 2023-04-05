@@ -46,10 +46,13 @@ export default NextAuth({
   session: {
     strategy: 'jwt',
   },
-  jwt: {},
 
   callbacks: {
     async signIn({ user, account, email, credentials }) {
+      const result = await Users.findOne({ email: email });
+
+      console.log('🚀 ~ file: [...nextauth].js:53 ~ signIn ~ result:', result);
+
       return true;
     },
     async redirect({ url, baseUrl }) {
@@ -61,6 +64,7 @@ export default NextAuth({
       return session;
     },
     async jwt({ token, user, account, profile, isNewUser }) {
+      token.role = 'user';
       return token;
     },
   },
