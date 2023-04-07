@@ -15,14 +15,19 @@
 
 // export default Users;
 
-import { Schema, model, models } from 'mongoose';
-
-const userSchema = new Schema({
-  username: String,
-  email: String,
-  password: String,
+import mongoose, { Schema, Document, model, models } from 'mongoose';
+export interface IUser extends Document {
+  name: string;
+  email: string;
+  password: string;
+  role: String;
+}
+const UserSchema: Schema = new Schema({
+  name: { type: String, required: false },
+  email: { type: String, required: false, unique: false },
+  password: { type: String, required: false },
+  role: { type: String, required: false },
 });
-
-const Users = models.user || model('user', userSchema);
+const Users = models.user || model('user', UserSchema);
 
 export default Users;
