@@ -1,8 +1,5 @@
 import { DefaultSession } from 'next-auth';
-
-export enum Role {
-  user = 'user',
-}
+import { Role } from './src/types/authTypes';
 
 declare module 'next-auth' {
   interface User {

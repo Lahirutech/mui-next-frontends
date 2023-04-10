@@ -6,7 +6,7 @@ import Users from '../../../../model/Schema';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { getUser } from '../../../dbOperations/dbOperations';
 import { UserType } from '../../../types/dboperationTypes';
-import { Role } from '../../../../nextauth';
+import { Role } from '../../../types/authTypes';
 
 export default NextAuth({
   providers: [
