@@ -1,6 +1,6 @@
 export interface UserType {
-  email: string;
+  email?: string;
   password?: string;
-  role: string;
-  name: string;
+  role?: string;
+  name?: string;
 }

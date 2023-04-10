@@ -6,6 +6,7 @@ import Users from '../../../../model/Schema';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { getUser } from '../../../dbOperations/dbOperations';
 import { UserType } from '../../../types/dboperationTypes';
+import { Role } from '../../../../nextauth';
 
 export default NextAuth({
   providers: [
@@ -16,32 +17,45 @@ export default NextAuth({
     }),
 
     CredentialsProvider({
+      id: 'credentials',
       name: 'Credentials',
-      async authorize(credentials, _req) {
+      credentials: {
+        email: {
+          label: 'Email',
+          type: 'text',
+        },
+        password: {
+          label: 'Password',
+          type: 'password',
+        },
+      },
+      async authorize(credentials) {
         connectMongo().catch((_error) => {
           error: 'Connection Failed...!';
         });
-        try {
-          // check user existance
-          const result = await Users.findOne({ email: credentials?.email });
 
-          if (!result) {
-            throw new Error('No user Found with Email Please Sign Up...!');
-          }
-          // compare()
-          if (credentials && credentials.password) {
-            const checkPassword = await compare(
-              credentials.password,
-              result.password
-            );
-            // incorrect password
-            if (!checkPassword || result.email !== credentials?.email) {
-              throw new Error("Username or Password doesn't match");
-            }
-          }
-        } catch (e: any) {
-          return null;
+        // Find user with the email
+        const user = await Users.findOne({
+          email: credentials?.email,
+        });
+
+        // Email Not found
+        if (!user) {
+          throw new Error('Email is not registered');
         }
+
+        // Check hased password with DB hashed password
+        const isPasswordCorrect = await compare(
+          credentials!.password,
+          user.hashedPassword
+        );
+
+        // Incorrect password
+        if (!isPasswordCorrect) {
+          throw new Error('Password is incorrect');
+        }
+
+        return user;
       },
     }),
   ],
@@ -64,30 +78,30 @@ export default NextAuth({
       });
       if (user) {
         const result = await getUser(user as UserType);
-        console.log('🚀 ~ results', result);
         if (!result) {
           // insert the user with user role
           const new_user = new Users({
             name: user.name,
             email: user.email,
-            role: 'user',
+            role: Role.user,
           });
           new_user.save(function (err: any) {
             if (err) console.log(err);
           });
+        } else {
+          if (token) {
+            token.role = result.role;
+          }
         }
       }
-      if (token) {
-        token.role = 'user';
-      }
+
       return token;
     },
 
     async session({ session, user, token }) {
-      if (token) {
-        session.role = token.role;
+      if (token && session.user) {
+        session.user.role = token.role;
       }
-      // call the database here and get the user roles
       return session;
     },
   },
