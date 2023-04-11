@@ -5,7 +5,16 @@ import Box from '@mui/material/Box';
 import Link from '../src/Link';
 import ProTip from '../src/ProTip';
 import Copyright from '../src/Copyright';
-
+import Chat from '../src/components/chat/chat';
+import styles from '../src/styles/home.module.scss';
+import Sidebar from '../src/components/Sidebar/sidebar';
 export default function Home() {
-  return <Container maxWidth='lg'></Container>;
+  return (
+    <div className={styles.home}>
+      <div className={styles.container}>
+        <Sidebar />
+        <Chat />
+      </div>
+    </div>
+  );
 }
