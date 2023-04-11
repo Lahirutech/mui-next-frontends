@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
-import styles from './register.module.scss';
+import styles from '../../styles/common.module.scss';
 import Image from 'next/image';
 
 const Register = () => {
@@ -48,7 +48,7 @@ const Register = () => {
           {err && 'Something went wrong'}
         </form>
         <p>
-          You do have an account? <Link href='/register'>Login</Link>
+          You do have an account? <Link href='/login'>Login</Link>
         </p>
       </div>
     </div>
