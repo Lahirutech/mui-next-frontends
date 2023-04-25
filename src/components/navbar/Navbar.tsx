@@ -1,94 +1,126 @@
-import { useState } from 'react';
-
-import { AppBar, Box, Button, Typography } from '@mui/material';
-import { Stack } from '@mui/system';
+import {
+  AppBar,
+  Avatar,
+  Box,
+  Button,
+  Container,
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Tooltip,
+  Typography,
+} from '@mui/material';
+import React from 'react';
+import AdbIcon from '@mui/icons-material/Adb';
+import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image';
-import Link from 'next/link';
-import styles from './navbar.module.css';
-import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
-
+import theme from '../../theme';
+const pages = ['Home', 'What is GPT?', 'Open AI', 'Case Studies', 'Library'];
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 export default function Navbar() {
-  const [toggle, setToggle] = useState(false);
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null
+  );
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
+    null
+  );
+
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
   return (
-    <Box className={styles['gpt3__navbar']}>
-      <Box className={styles['gpt3__navbar-links']}>
-        <Box marginRight='5px'>
-          <Image
-            alt=''
-            width={62.56}
-            height={16.02}
-            src='/assets/logo.svg'
-          ></Image>
-        </Box>
-        <Box className={styles['gpt3__navbar-links_container']}>
-          <Typography variant='h6'>Home</Typography>
-          <Typography variant='h6'>What is GPT?</Typography>
-          <Typography variant='h6'>Open AI</Typography>
-          <Typography variant='h6'>Case Studies</Typography>
-          <Typography variant='h6'>Library</Typography>
-        </Box>
-      </Box>
-      <Box className={styles['gpt3__navbar-sign']}>
-        <Button
-          color='primary'
-          variant='contained'
-          sx={{ mr: '15px' }}
-        >
-          Sign In
-        </Button>
-        <Button
-          color='secondary'
-          variant='contained'
-        >
-          Sign Up
-        </Button>
-      </Box>
-
-      {/* mobile menue */}
-      <Box className={styles['gpt3__navbar-menu']}>
-        {toggle ? (
-          <RiCloseLine
-            color='#fff'
-            size={27}
-            onClick={() => setToggle(false)}
-          />
-        ) : (
-          <RiMenu3Line
-            color='#fff'
-            size={27}
-            onClick={() => setToggle(true)}
-          />
-        )}
-
-        {toggle && (
+    <AppBar
+      position='static'
+      sx={{ bgcolor: theme.palette.primary.darker }}
+    >
+      <Container maxWidth='xl'>
+        <Toolbar disableGutters>
           <Box
-            className={styles['gpt3__navbar-menu_container scale-up-center']}
+            marginRight='5px'
+            flexGrow={1}
           >
-            <Box className={styles['gpt3__navbar-menu_container-links']}>
-              <Typography variant='h6'>Home</Typography>
-              <Typography variant='h6'>What is GPT?</Typography>
-              <Typography variant='h6'>Open AI</Typography>
-              <Typography variant='h6'>Case Studies</Typography>
-              <Typography variant='h6'>Library</Typography>
-            </Box>
-            <Box className={styles['gpt3__navbar-menu_container-links-sign']}>
-              <Button
-                color='primary'
-                variant='contained'
-                sx={{ mr: '15px' }}
-              >
-                Sign In
-              </Button>
-              <Button
-                color='secondary'
-                variant='contained'
-              >
-                Sign Up
-              </Button>
-            </Box>
+            <Image
+              alt=''
+              width={62.56}
+              height={16.02}
+              src='/assets/logo.svg'
+            ></Image>
           </Box>
-        )}
-      </Box>
-    </Box>
+
+          <Box
+            sx={{
+              flexGrow: 4,
+              display: { xs: 'none', md: 'flex' },
+              alignItems: 'center',
+              justifyContent: 'flex-end',
+            }}
+          >
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={() => ''}
+                sx={{ my: 2, color: 'white', display: 'block', ml: 3 }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+
+          <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size='large'
+              aria-label='account of current user'
+              aria-controls='menu-appbar'
+              aria-haspopup='true'
+              onClick={handleOpenNavMenu}
+              color='inherit'
+            >
+              <MenuIcon sx={{ position: 'absolute' }} />
+            </IconButton>
+            <Menu
+              id='menu-appbar'
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+                '& .MuiPaper-root': {
+                  backgroundColor: 'black',
+                },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ mt: 5 }}
+                >
+                  <Typography
+                    color={'white'}
+                    textAlign='center'
+                  >
+                    {page}
+                  </Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 }

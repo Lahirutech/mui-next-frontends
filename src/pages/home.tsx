@@ -1,5 +1,5 @@
 import { Box, Container } from '@mui/system';
-import { Brand, Navbar, CTA } from '../components';
+import { Brand, CTA, Navbar } from '../components';
 import {
   Footer,
   Blog,
@@ -14,13 +14,13 @@ export default function home() {
     <Box className={styles['gradient__bg']}>
       <Navbar />
       <Header />
-      <Brand />
+      {/* <Brand />
       <WhatGPT3 />
       <Features />
       <Possibility />
       <CTA />
       <Blog />
-      <Footer />
+      <Footer /> */}
     </Box>
   );
 }

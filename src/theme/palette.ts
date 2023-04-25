@@ -25,7 +25,7 @@ declare module '@mui/material/Button' {
 export const palette = {
   primary: {
     main: '#0971f1',
-    darker: '#053e85',
+    darker: ' #000000',
   },
   neutral: {
     main: '#64748B',
