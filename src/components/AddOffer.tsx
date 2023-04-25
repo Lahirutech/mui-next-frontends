@@ -4,7 +4,6 @@ import {
   Button,
   ButtonGroup,
   Fab,
-  IconButton,
   Modal,
   Stack,
   TextField,
@@ -36,7 +35,6 @@ const UserBox = styled(Box)({
 });
 function AddOffer() {
   const [open, setOpen] = useState(false);
-  const handleClose = () => {};
   return (
     <Box>
       {' '}
