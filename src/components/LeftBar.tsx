@@ -11,7 +11,7 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import DiscountIcon from '@mui/icons-material/Discount';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 
-export const LeftBar = ({ toggleTheme }: any) => {
+const LeftBar = ({ toggleTheme }: any) => {
   console.log('props');
 
   return (
@@ -56,3 +56,5 @@ export const LeftBar = ({ toggleTheme }: any) => {
     </Box>
   );
 };
+
+export default LeftBar;
